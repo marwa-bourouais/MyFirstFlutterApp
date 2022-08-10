@@ -5,6 +5,14 @@ My very first Flutter app
 ## Getting Started
 
 This project is a starting point for a Flutter application.
+The following flutter widgets are used in this projet :
+- Scaffold with AppBar 
+- SnackBar 
+- GestureDetector
+- BottomNavigationBar
+- FloatingActionButton 
+
+
 
 A few resources to get you started if this is your first Flutter project:
 
