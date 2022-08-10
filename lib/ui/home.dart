@@ -3,6 +3,63 @@
 import 'package:flutter/material.dart';
 
 import 'CustomButton.dart';
+
+class Wisdom extends StatefulWidget {
+  const Wisdom({Key? key}) : super(key: key);
+
+  @override
+  _WisdomState createState() => _WisdomState();
+}
+
+class _WisdomState extends State<Wisdom> {
+  var _index=0;
+  List quotes = [
+    "Two things are infinite: the universe and human stupidity; "
+        "and I'm not sure about the universe.",
+  "Be the change that you wish to see in the world",
+    "Be who you are and say what you feel, because those who mind don't matter,"
+        " and those who matter don't mind",
+    "Be the change that you wish to see in the world.",
+    "You've gotta dance like there's nobody watching,Love like you'll never be hurt,Sing like "
+        "there's nobody listening,And live like it's heaven on earth",
+    "Don’t walk in front of me… I may not follow Don’t walk behind me… I may not lead Walk beside me… just be my friend"
+
+  ] ;
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      body: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget> [
+
+           Center( child: Text(quotes[_index % quotes.length])),
+            Divider(thickness: 1.3),
+            Padding(padding: EdgeInsets.only(top: 18.0),
+            child: FlatButton.icon(onPressed:  _showQuote,
+                icon : Icon( Icons.wb_sunny),
+                color: Colors.greenAccent.shade700,
+                label: Text("inspire me ",
+                style: TextStyle(
+                  color: Colors.white
+                ),)))
+          ],
+        ),
+      )
+    );
+  }
+
+  void _showQuote() {
+
+    setState(() {
+      _index+=1;
+
+    });
+
+  }
+}
+
 class BizCard extends StatelessWidget {
   const BizCard({Key? key}) : super(key: key);
 
